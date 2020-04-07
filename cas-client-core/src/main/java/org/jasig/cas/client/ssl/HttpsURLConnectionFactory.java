@@ -47,8 +47,9 @@ public final class HttpsURLConnectionFactory implements HttpURLConnectionFactory
     /**
      * Hostname verifier used when making an SSL request to the CAS server.
      * Defaults to {@link HttpsURLConnection#getDefaultHostnameVerifier()}
+     * When you use spring session，this must transient。
      */
-    private HostnameVerifier hostnameVerifier = HttpsURLConnection.getDefaultHostnameVerifier();
+    private transient HostnameVerifier hostnameVerifier = HttpsURLConnection.getDefaultHostnameVerifier();
 
     /**
      * Properties file that can contains key/trust info for Client Side Certificates
